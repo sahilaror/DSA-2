@@ -1,0 +1,435 @@
+ANS 1class a{
+    public static void main(String[] args) {
+        int arr[]={3,5,1,6,0};
+
+
+        for (int i=0; i<arr.length; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+
+                }
+            }
+        }
+
+        for (var b: arr){
+            System.out.print(b+" ");
+        }
+    }
+}
+
+
+
+ANS 2
+
+	import java.util.Arrays;
+
+class a{
+
+    public  static void descendingIns(int arr[]) {
+
+        for (int i=0; i<arr.length; i++){
+            int mid_idx=i;
+            for (int j=i+1; j<arr.length;j++){
+                if (arr[j]>arr[mid_idx]){
+                    mid_idx=j;
+                }
+            }
+            if (mid_idx!=i){
+                int temp=arr[mid_idx];
+                arr[mid_idx]=arr[i];
+                arr[i]=temp;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int arr[]={3,5,1,6,0};
+        descendingIns(arr);
+        System.out.println("descending order is:-"+ Arrays.toString(arr));
+
+    }
+}
+
+ANS 3
+	  import java.util.Arrays;
+
+class a{
+
+    public  static void descendingIns(int arr[]){
+        for (int i=1; i<arr.length; i++){
+            int j=i;
+            while (j>0 && arr[j]>arr[j-1]){
+                int temp=arr[j];
+                arr[j]=arr[j-1];
+                arr[j-1]=temp;
+                j--;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int arr[]={3,5,1,6,0};
+        descendingIns(arr);
+        System.out.println("descending order is:-"+ Arrays.toString(arr));
+
+    }
+}		  
+
+ANS 4
+		import java.util.Arrays;
+
+class a{
+    public static void main(String[] args) {
+        int arr[]={3,5,1,6,0};
+
+        int count=0;
+
+        for (int i=0; i<arr.length; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                    count++;
+                    System.out.println(Arrays.toString(arr));
+                }
+            }
+        }
+        System.out.println("no. of count is:-"+ count);
+        System.out.print("descending order is:- "+ Arrays.toString(arr) +" ");
+
+    }
+}
+
+ANS 5 
+			import java.util.Arrays;
+
+class a{
+
+    public  static void descendingIns(int arr[]) {
+
+        for (int i=0; i<arr.length; i++){
+            int mid_idx=i;
+            for (int j=i+1; j<arr.length;j++){
+                if (arr[j]>arr[mid_idx]){
+                    mid_idx=j;
+                }
+            }
+            if (mid_idx!=i){
+                int temp=arr[mid_idx];
+                arr[mid_idx]=arr[i];
+                arr[i]=temp;
+                System.out.println(Arrays.toString(arr));
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int arr[]={3,5,1,6,0};
+        descendingIns(arr);
+        System.out.println("descending order is:-"+ Arrays.toString(arr));
+
+    }
+}
+			 
+
+
+										NUMBER SYSTEM
+
+
+
+ANS 1
+			class a {
+    public static void main(String[] args) {
+
+        System.out.println(Integer.toBinaryString(5));
+        System.out.println(Integer.toBinaryString(10));
+    }
+}
+
+ANS 2
+		so n=15
+
+         2  | 15  | 1
+	   2  | 7   | 1
+	   2  | 3	| 1
+            | 1	|
+
+the remainder of 15 is 1 and converting it into binary the answer is 1111. therefore it’s not power of 2. 
+           			
+
+           so n=32
+
+	   2  | 32  | 0
+	   2  | 16  | 0
+	   2  | 8	| 0
+         2  | 4	| 0
+         2  | 2   | 0
+		| 1   |
+	
+	convertin it into binary the answer is 10000, as it has only 1 set bit, therefore its power of 2.
+
+ANS 3
+
+		import java.util.Scanner;
+
+class a{
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the value of n");
+        int n=s.nextInt();
+
+        if ((n&0)==0){
+            System.out.println(n+" is even number");
+        }
+        else {
+            System.out.println(n+" is odd number");
+        }
+    }
+}
+
+
+
+8 is even number because when we divide the 8 the reninder is 0
+3 is odd number because when  we divide the 3 the reminder is 1
+
+
+ANS 4
+ 		
+			import java.util.Scanner;
+
+class a{
+    public static int countBit(int n ){
+        int count=0;
+        while (n>0){
+            count+=n&1;
+            n>>=1;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the value of n");
+        int n=s.nextInt();
+        int result=countBit(n);
+        System.out.println("the no of bit is:-"+result);
+    }
+}
+
+ANS 5
+    			
+			class a{
+
+    public static int findOdd(int arr[]){
+        int Xor=0;
+        for (int b: arr){
+            Xor=Xor^b;
+        }
+        return Xor;
+    }
+    public static void main(String[] args) {
+       int  arr[] = {4, 3, 6, 2, 6, 4, 2, 3, 4, 3, 3};
+        int result=findOdd(arr);
+        System.out.println("the no of time odd occuring is:-"+result);
+
+    }
+}
+
+			 	
+
+                										  SEARCHING
+
+ANS 1
+
+import java.util.Scanner;
+class a{
+    public static int countBit(int arr[],int x ){
+            int index=0;
+            for (int i=0; i<arr.length; i++){
+                if (arr[i]==x){
+                    index=i;
+                }
+            }
+            return index;
+    }
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("enter the size of an array");
+        int n = s.nextInt();
+        int arr[] = new int[n];
+        System.out.println("enter the element of an array");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = s.nextInt();
+        }
+        System.out.println("enter the searching element");
+        int x = s.nextInt();
+        int result = countBit(arr, x);
+        if (result == -1) {
+            System.out.println("element is not found in array");
+        } else {
+            System.out.println("the location of searching element is:- " + result);
+        }
+    }
+}
+
+ANS 2
+
+			import java.util.Scanner;
+
+public class binarySearch {
+
+    public static int binarySera(int arry[], int x){
+        int low=0; int high=arry.length-1;
+        int result=-1;
+
+         while (low<=high){
+            int mid=low +(high-low)/2;
+             if (arry[mid]==x){
+                 result= mid;
+                 low=mid+1;
+             }
+             else if(arry[mid]>x){
+              high=mid-1;
+             } else {
+                 low=mid+1;
+             }
+         }
+         return result;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int arry[]={1,1,1,2,3,4,4,5,6,6,6,6};
+        System.out.println("enter the searching value");
+        int x=s.nextInt();
+        int result =binarySera(arry,x);
+
+        if (result==-1){
+           System.out.println("result is not found"+-1);
+        }else {
+           System.out.println("element is found at location of  "+result);
+        }
+
+    }
+}
+
+	
+ANS 3
+		
+				class a{
+    public static int countBit(int arr[],int low,int high ){
+        int result=0;
+        int mid=0;
+        while (low<=high){
+            mid=low+(high-low)/2;
+            if (arr[mid]==0){
+                result=mid;
+                low=mid+1;
+            }
+            else {
+                high=mid-1;
+            }
+        }
+        return arr.length-low;
+    }
+    public static void main(String[] args) {
+
+        int arr[]={0,0,0,0,0,1,1};
+        int result= countBit(arr,0,arr.length);
+        System.out.println(result);
+    }
+}
+							
+
+ANS 4
+
+			import java.util.Scanner;
+
+class a{
+    public static int duplicateCount(int matrix[],int n,int low,int high){
+        int result=-1;
+        while (low<=high){
+            int mid=low+(high-low)/2;
+            if (matrix[mid]==n){
+                result=mid;
+                high=mid-1;
+            }
+            else if(matrix[mid]>n){
+                high=mid-1;
+            }
+            else {
+                low=mid+1;
+            }
+        }
+        return result;
+    }
+    public static int duplicateCoun(int matrix[],int n,int low,int high){
+               int result=-1;
+               while (low<=high){
+                   int mid=low+(high-low)/2;
+                   if (matrix[mid]==n){
+                       result=mid;
+                       low=mid+1;
+                   }
+                   else if(matrix[mid]<n){
+                       low=mid+1;
+                   }
+                   else {
+                       high=mid-1;
+                   }
+               }
+               return result;
+    }
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the value of target");
+        int n=s.nextInt();
+        int matrix[]={2,5,5,5,6,6,8,9,9,9};
+        int fstidx=duplicateCount(matrix,n,0,matrix.length-1);
+        int lstidx=duplicateCoun(matrix,n,0,matrix.length-1);
+        if (fstidx==lstidx && fstidx==-1){
+            System.out.println("element is not found in the matrix");
+        }
+        else{
+            System.out.println("element "+ n+" is occurred at "+(lstidx-fstidx+1)+" number of time");
+        }
+    }
+}
+
+
+ANS 5
+
+          import java.util.Scanner;
+
+class a{
+    public static boolean perfectSquare(int n){
+
+        int value=0;
+        int low=0; int high=n;
+            while (low <=high){
+                int mid=low+(high-low)/2;
+                value=mid*mid;
+                if (value==n){
+                     return true;
+                }
+                else if(value>n) {
+                    high=mid-1;
+                }
+                else{
+                    low=mid+1;
+
+                }
+            }
+            return false;
+    }
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("enter the vaue of n");
+        int n=s.nextInt();
+        System.out.println(perfectSquare(n));
+
+
+    }
+}
+        
